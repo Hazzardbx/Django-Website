@@ -1,0 +1,20 @@
+{%extends 'main.html'%}
+{%load static%}
+{%block content%}
+    <img src="{% static 'images/bg-home.png' %}" alt="TEM QUE DAR">
+
+
+    <div id="slider" class="slider">
+        <div class="slide"><img src="{% static 'images/recycle.png' %}" alt="Recycle"></div> <!-- ... slides ... -->
+        <div class="slide"><img src="{% static 'images/slide1.png' %}" alt="Slide 2"></div> <!-- ... slides ... -->
+        <div class="slide"><img src="{% static 'images/slide2.png' %}" alt="Slide 3"></div> <!-- ... slides ... -->
+        <div class="slide"><img src="{% static 'images/slide3.png' %}" alt="Slide 4"></div> <!-- ... slides ... -->
+        
+
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+    
+    <script src="{% static 'js/slider.js' %}"></script>
+
+{%endblock%}

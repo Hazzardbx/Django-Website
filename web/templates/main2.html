@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+
+        body{
+            background-color: #F5FEE4;             
+        }
+
+        h1 {
+        text-align: center;
+        font-size: 65px;
+        padding: 0px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #6F9C47;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #171717;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #465221;
+            color: #ffffff;
+        }
+
+        .active {
+            background-color: #B2D053;
+        }
+
+        #conteudo-container {
+            position: relative;
+            min-height: 100vh; /* altura 100% do ecrã */
+        }
+
+        #imagem-canto-inferior-direito {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            max-width: 509px;
+            max-height: 695px; 
+        }
+
+        #imagem-canto-inferior-esquerdo {
+            position: absolute;
+            left: 0; 
+            bottom: 0; 
+            max-width: 509px; 
+            max-height: 695px; 
+            z-index: 10; /* Coloca imagem sobre o rodapé */
+        }
+
+        footer {
+            background-color: #B2D053;
+            padding: 10px;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            position: relative; /* position: relative; ao rodape */
+            z-index: 2; /* z-index mais baixo que o da imagem para a imagem ficar por cima do rodapé */
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div id="conteudo-container">
+        <ul>
+            <li><a class="active" href="/">Home</a></li>
+            <li><a href="{% url 'recycling' %}">Recycling</a></li>
+            <li><a href="{% url 'about' %}">About us</a></li>
+            <li><a href="{% url 'partners' %}">Partners</a></li>
+        </ul>
+    
+        {% block content %}
+        {% endblock %}
+
+        <img src="{% static 'images/footer.png' %}" alt="Recycle garbage" id="imagem-canto-inferior-direito">
+        
+        <img src="{% static 'images/footer.png' %}" alt="Recicla badalhoco" id="imagem-canto-inferior-esquerdo">
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Trash Trek</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+#slider {
+    width: 70%; /* Slider ocupa 70% da largura da tela */
+    height: auto; /* Altura ajustada automaticamente */
+    margin: 0 auto; /* Centraliza o slider horizontalmente */
+    overflow: hidden; /* Esconde partes dos slides que não estão ativos */
+    position: relative;
+    white-space: nowrap; /* Impede que os slides sejam empilhados verticalmente */
+  }
+  
+  .slide {
+    display: inline-block; /* Faz com que os slides sejam dispostos em linha */
+    width: 100%; /* Cada slide tem a largura do contêiner */
+    height: auto; /* Altura ajustada automaticamente */
+    position: relative; /* Posiciona relativo ao slider */
+    transition: transform 1s ease; /* Suaviza a transição entre slides */
+  }
+  
+  .slide img {
+    width: 100%; /* Imagem ocupa todo o espaço do slide */
+    height: auto; /* Altura ajustada automaticamente */
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Centra as setas verticalmente */
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+  }
+  
+  /* Posiciona a seta "prev" à esquerda */
+  .prev {
+    left: 25px; /* Ajuste conforme necessário */
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* Posiciona a seta "next" à direita */
+  .next {
+    right: 25px; /* Ajuste conforme necessário */
+    border-radius: 0 3px 3px 0;
+  }
+  
+  /* Estilo para hover das setas */
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  

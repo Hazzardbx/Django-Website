@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body{
+            background-image: url('{% static "images/background.png" %}'); 
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-attachment: absolute;
+            background-position: center top; /* centrar no topo */
+        }
+
+        h1 {
+            color: #173109;
+            text-align: center;
+            font-size: 100px;
+            padding: 170px;
+        }
+
+        h2 {
+            color:rgb(8, 13, 8);
+            text-align: center;
+            font-size: 25px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #B2D053;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #171717;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #465221;
+            color: #ffffff;
+        }
+
+        .active {
+            background-color: #B2D053;
+        }
+
+        footer {
+            background-color: #B2D053;
+            padding: 10px;
+            text-align: center;
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'recycling' %}">Recycling</a></li>
+        <li><a href="{% url 'about' %}">About us</a></li>
+        <li><a href="{% url 'partners' %}">Partners</a></li>
+    </ul>
+    
+    {% block content %}
+    {% endblock %}
+    
+    <footer>
+        <p>&copy; 2023 Trash Trek</p>
+    </footer>
+
+</body>
+</html>
